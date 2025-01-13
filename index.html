@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Libary</h1>
+
+        
+        <div id="book-modal">
+            <div class="book-modal-content">
+                <span id="modal-close">&times;</span>
+                <form action="" id="book-form">
+                    <h1>Book Form</h1>
+                    <label for="book-author">Author:</label>
+                    <input type="text" id="book-author">
+                    <label for="book-title">Title:</label>
+                    <input type="text" id="book-title">
+                    <label for="book-pages">Pg Count:</label>
+                    <input type="number" id="book-pages">
+                    <label for="book-age">Used</label>
+                    <input type="checkbox" id="book-age">
+                    
+                    <button id="add-book-btn" onclick="addBookToLibrary">Add Book</button>
+                </form>
+            </div>
+        </div>
+        
+        <h1>My Books:</h1>
+        <div class="book-section">
+            <button id="modal-open">New Book</button>
+            <div class="book-container">
+                <div class="book card">
+                    <h1><em>The Lion King</em></h1>
+                    <h2>By:</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, minus? Distinctio culpa nobis laborum alias omnis maiores nostrum, deleniti sed iste sit, temporibus exercitationem similique magnam. Laborum dolorem dolorum iure.</p>
+                    <h4>Used</h4>
+                </div>
+                <div class="book card">
+                </div>
+                <div class="book card">
+                
+                </div>
+                <div class="book card">
+                
+                </div>
+                <div class="book card">
+                
+                </div>
+                <div class="book card">
+                
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
