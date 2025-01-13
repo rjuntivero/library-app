@@ -12,7 +12,10 @@ function addBookToLibrary() {
 
 
 
-
+var bookmark = document.querySelector(".library-card")
+bookmark.addEventListener("click", function() {
+    bookmark.classList.contains("show") ? bookmark.classList.remove("show") : bookmark.classList.add("show");
+})
 
 
 //Modal Open/Close
