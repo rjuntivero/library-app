@@ -1,13 +1,64 @@
 const myLibrary = [];
+const bookContainer = document.querySelector(".book-container")
 
-function Book() {
-
+function Book(author,year,pageCount, age, title) {
+    this.author = author;
+    this.year = year;
+    this.pageCount = pageCount;
+    this.age = age;
+    this.title = title;
 }
 
-function addBookToLibrary() {
+const bookForm = document.querySelector("#book-form");
+const bookAuthor = document.querySelector("#book-author");
+const bookYear = document.querySelector("#book-year");
+const bookTitle = document.querySelector("#book-title");
+const bookPages = document.querySelector("#book-pages");
+const bookAge = document.querySelector("#book-age");
+const bookBtn = document.querySelector("#add-book-btn");
+bookBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    addBookToLibrary(
+        bookAuthor.value,
+        bookYear.value,
+        bookPages.value,
+        bookAge.checked ? "Used" : "New", 
+        bookTitle.value
+    );
+    bookAuthor.value = '';
+    bookYear.value = '';
+    bookTitle.value = '';
+    bookPages.value = '';
+    bookAge.checked = false;
+});
 
+if (bookBtn) {
+    console.log("hello")
 }
 
+function addBookToLibrary(author, year, pageCount, age, title) {
+    const book = new Book(author, year, pageCount, age, title);
+    
+    myLibrary.push(book);
+    displayBooks(book);
+}
+
+function displayBooks(book) {
+    let bookCard = document.createElement("div");
+    let bookText = document.createElement("div")
+    bookCard.classList.add("book","card");
+    bookText.classList.add("card-text");
+    bookText.innerHTML = `
+    <h3>${book.title}</h3>
+    `;
+    bookCard.appendChild(bookText);
+    bookContainer.appendChild(bookCard);
+    bookCard.classList.add("data-author", "data-year", "data-pageCount", "data-age");
+    bookCard.setAttribute("data-author", book.author);
+    bookCard.setAttribute("data-year", book.year);
+    bookCard.setAttribute("data-pageCount", book.pageCount);
+    bookCard.setAttribute("data-age", book.age);
+}
 
 
 
@@ -18,21 +69,21 @@ bookmark.addEventListener("click", function() {
 })
 
 
-//Modal Open/Close
-var modal = document.querySelector("#book-modal");
-var modalBtn = document.querySelector("#modal-open");
-var modalClose = document.querySelector("#modal-close");
+// //Modal Open/Close
+// var modal = document.querySelector("#book-modal");
+// var modalBtn = document.querySelector("#modal-open");
+// var modalClose = document.querySelector("#modal-close");
 
-modalBtn.addEventListener("click", () => {
-    modal.classList.add("show");
-  });
+// modalBtn.addEventListener("click", () => {
+//     modal.classList.add("show");
+//   });
 
-modalClose.onclick = () => {
-    modal.classList.remove("show");
-}
+// modalClose.onclick = () => {
+//     modal.classList.remove("show");
+// }
 
-window.onclick = e => {
-    if (e.target == modal) {
-        modal.classList.remove("show");
-    }
-}
+// window.onclick = e => {
+//     if (e.target == modal) {
+//         modal.classList.remove("show");
+//     }
+// }
