@@ -1,0 +1,24 @@
+{
+  "name": "library-app",
+  "version": "1.0.0",
+  "description": "Library App",
+  "homepage": "https://github.com/rjuntivero/library-app#readme",
+  "bugs": {
+    "url": "https://github.com/rjuntivero/library-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjuntivero/library-app.git"
+  },
+  "license": "ISC",
+  "author": "RJ Untivero",
+  "type": "commonjs",
+  "main": "./dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^6.1.0"
+  }
+}
